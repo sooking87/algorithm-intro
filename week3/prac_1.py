@@ -1,4 +1,4 @@
-# IT공학전공 2116313 손수경
+# 2116313 손수경
 # 1번을 해보세요!
 def sequential_search(A, key):
     for i in range(len(A)):
