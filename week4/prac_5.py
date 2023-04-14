@@ -13,9 +13,10 @@ def dfs(graph, start, visited):
 # 2번을 해보세요!
 n = int(input())
 mygraph = dict()
-temp_list = [[i for i in input().split()[:2]] for _ in range(n)]
 for i in range(n):
-    mygraph[temp_list[i][0]].append(temp_list[i][1])
+    a, b = input().split()
+    mygraph[a] = mygraph.setdefault(a, set()) | {b}
+    mygraph[b] = mygraph.setdefault(b, set()) | {a}
 print(mygraph)
 
 
