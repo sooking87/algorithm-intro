@@ -7,7 +7,6 @@ def powerMat(x, n):
         return multMat(x, powerMat(multMat(x, x), (n - 1) // 2))
 
 
-# 행렬을 곱하는 multMat(M1, M2) 함수에요!
 def multMat(M1, M2):
     result = [[0 for _ in range(len(M2[0]))] for __ in range(len(M1))]
     for i in range(len(M1)):
@@ -20,7 +19,6 @@ def multMat(M1, M2):
 n = int(input())
 n2 = int(input())
 x = [[int(i) for i in input().split()] for _ in range(n2)]
-
 # 출력합니다!
 result = powerMat(x, n)
 print()
