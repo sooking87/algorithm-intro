@@ -1,0 +1,32 @@
+# 2116313 손수경
+# 1번을 해보세요!
+def fib_mat(n):
+    return None
+
+
+# powerMat(x, n) 함수
+def powerMat(x, n):
+    if n == 1:
+        return x
+    elif (n % 2) == 0:
+        return powerMat(multMat(x, x), n // 2)
+    else:
+        return multMat(x, powerMat(multMat(x, x), (n - 1) // 2))
+
+
+# multMat(M1, M2) 함수
+def multMat(M1, M2):
+    result = [[0 for _ in range(len(M2[0]))] for __ in range(len(M1))]
+    for i in range(len(M1)):
+        for j in range(len(M2[0])):
+            for k in range(len(M1[0])):
+                result[i][j] = M1[i][k] * M2[k][j]
+    return result
+
+
+# 2번을 해보세요!
+n = None
+
+
+# 출력합니다!
+print(fib_mat(n))
