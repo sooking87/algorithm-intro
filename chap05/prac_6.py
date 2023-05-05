@@ -9,11 +9,20 @@ class TNode:
 
 # 1번을 해보세요!
 def postorder(n):
-    return None
+    if n is not None:
+        postorder(n.left)
+        postorder(n.right)
+        print(n.data, end=' ')
 
 
 # 2번을 해보세요!
-binary_tree = [None]
+n = int(input())
+binary_tree = [TNode(0, 0, 0) for _ in range(n)]
+for i in range(n):
+    data, left, right = [int(m) for m in input().split()][:3]
+    binary_tree[i].data = data
+    binary_tree[i].left = binary_tree[left-1] if left > 0 else None
+    binary_tree[i].right = binary_tree[right-1] if right > 0 else None
 
 
 # 출력합니다!

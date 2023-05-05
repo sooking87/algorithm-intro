@@ -1,7 +1,11 @@
 # 2116313 손수경
 # 1번을 해보세요!
 def fib_mat(n):
-    return None
+    if n < 2:
+        return n
+    mat = [[1, 1], [1, 0]]
+    result = powerMat(mat, n)
+    return result[0][1]
 
 
 # powerMat(x, n) 함수
@@ -20,12 +24,12 @@ def multMat(M1, M2):
     for i in range(len(M1)):
         for j in range(len(M2[0])):
             for k in range(len(M1[0])):
-                result[i][j] = M1[i][k] * M2[k][j]
+                result[i][j] += M1[i][k] * M2[k][j]
     return result
 
 
 # 2번을 해보세요!
-n = None
+n = int(input())
 
 
 # 출력합니다!

@@ -9,7 +9,7 @@ class TNode:
 
 # 1번을 해보세요!
 def calc_height(root):
-    if root in None:
+    if root is None:
         return 0
     hLeft = calc_height(root.left)
     hRight = calc_height(root.right)
@@ -19,8 +19,12 @@ def calc_height(root):
 # 2번을 해보세요!
 n = int(input())
 binary_tree = [TNode(0, 0, 0) for _ in range(n)]
+
 for i in range(n):
     data, left, right = [int(m) for m in input().split()][:3]
+    binary_tree[i].data = data
+    binary_tree[i].left = binary_tree[left - 1] if left > 0 else None
+    binary_tree[i].right = binary_tree[right - 1] if right > 0 else None
 
 
 # 출력합니다!

@@ -40,11 +40,29 @@ def strip_closest(P, d):
 
 # 1번을 해보세요!
 def closest_pair_dist(P, n):
-    return None
+    if n <= 3:
+        return closest_pair(P)
+    mid = n // 2
+    mid_x = P[mid][0]
+
+    dl = closest_pair_dist(P[:mid], mid)
+    dr = closest_pair_dist(P[:mid], n - mid)
+    d = min(dl, dr)
+    Pm = []
+    for i in range(n):
+        if abs(P[i][0] - mid_x) < d:
+            Pm.append(P[i])
+    ds = strip_closest(Pm, d)
+    return min(d, ds)
 
 
 # 2번을 해보세요!
+n = int(input())
 p = []
+for i in range(n):
+    a, b = input().split()
+    temp = [int(a), int(b)]
+    p.append(temp)
 
 
 # 출력합니다!
