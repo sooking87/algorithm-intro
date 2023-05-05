@@ -6,7 +6,7 @@ def counting_sort(A):
 
     for i in A:
         count[i] += 1
-    for i in range(MAX_VAL):
+    for i in range(1, MAX_VAL):
         count[i] += count[i - 1]
     for i in range(len(A)):
         output[count[A[i]] - 1] = A[i]

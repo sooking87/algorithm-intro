@@ -9,13 +9,23 @@ def hashFn(key):		# 해시 함수
 
 
 def lp_delete(key):
-    return 0
+    id = hashFn(int(key))
+    count = M
+    while count > 0:
+        if table[id] == None:
+            return
+        if table[id] != -1 and table[id] == key:
+            table[id] = -1
+            return
+        id = (id + 1 + M) % M
+        count -= 1
 
 
 # 2번을 해보세요!
-table = []
-key = None
+table = [None if m == 'None' else int(m) for m in input().split()]
+key = int(input())
 
 
 # 출력합니다!
-print(lp_delete(key))
+lp_delete(key)
+print(table)

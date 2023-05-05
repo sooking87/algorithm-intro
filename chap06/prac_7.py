@@ -5,7 +5,10 @@ table = [None]*M    # 테이블 만들기: None으로 초기화
 
 # 1번을 해보세요!
 def hashFn(key):
-    return 0
+    sum = 0
+    for c in key:
+        sum = sum + ord(c)
+    return sum % M
 
 
 # 선형 조사법의 삽입 알고리즘
@@ -22,7 +25,9 @@ def lp_insert(key):
 
 
 # 2번을 해보세요!
-lp_insert(None)
+n = int(input())
+for _ in range(n):
+    lp_insert(input())
 
 
 # 출력합니다!

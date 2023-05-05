@@ -22,9 +22,8 @@ def lp_insert(key):
 
 # 2번을 해보세요!
 n = int(input())
-lp_insert(None)
 for i in range(n):
-    lp_insert.put(int(input()))
+    lp_insert(int(input()))
 
 # 출력합니다!
 print(table)
